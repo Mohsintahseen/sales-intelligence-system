@@ -2,7 +2,7 @@
 
 An end-to-end sales analytics platform that answers five business questions: what happened, why it happened, what will happen, what the business should do, and how confident the forecasts are.
 
-> **Status:** Phase 1 complete (environment setup). Under active development.
+> **Status:** Phase 2 complete (data loaded and validated). Under active development.
 
 ## Planned Features
 
@@ -57,4 +57,29 @@ tests/       Validation tests
 
 ## Data
 
-Dataset details will be added in Phase 2. Any simulated data will be clearly labeled as such.
+**All data in this project is SIMULATED.** It is the *Global Electronics Retailer* dataset published by [Maven Analytics](https://mavenanalytics.io/data-playground/global-electronics-retailer) for a fictitious company. Findings describe this dataset only and are not real-world business observations.
+
+| Table | Rows | Description |
+|---|---|---|
+| `fact_sales` | 62,884 | Order lines, Jan 2016 to 20 Feb 2021 |
+| `dim_customers` | 15,266 | Customers in 8 countries |
+| `dim_products` | 2,517 | Products with unit cost and price |
+| `dim_stores` | 67 | Physical stores plus the online store (key 0) |
+| `dim_date` | 2,557 | Calendar table |
+| `exchange_rates` | 11,215 | Daily rates against USD |
+
+The raw CSVs are not stored in this repository. To reproduce the database:
+
+1. Download the dataset from Maven Analytics and place the CSVs in `data/raw/`.
+2. Create the schema: `psql -U postgres -d sales_intelligence -f sql/01_create_schema.sql`
+3. Load the data: `python src/load_data.py`
+4. Validate: `psql -U postgres -d sales_intelligence -f sql/02_validate_load.sql`
+
+### Known limitations
+
+- No discount data exists, so discount analysis is out of scope.
+- Each product has a single price, so revenue changes come only from quantity and product mix.
+- The simulated margin (about 59%) is far above real retail levels.
+- February 2021 is a partial month and is excluded from forecasting.
+
+See `docs/data_quality_log.md` for the data profiling results.
