@@ -21,3 +21,4 @@ and an exchange rate exists for every sale's date and currency.
 | 7 | Data ends 2021-02-20 (partial month) | Excluded from forecasting |
 | 8 | No discount column | Discount KPI dropped |
 | 9 | One price per product, no price history | Documented as a limitation |
+| 10 | No orders on 237 of 1,878 calendar days. 180 of them are five annual runs of 35 to 37 days (about 18 Mar to 23 Apr, 2016 to 2020); the rest are scattered 1 to 2 day gaps. | Found in Module 3.7 (calendar completeness was not checked in 2.4). Mar/Apr monthly totals and seasonal indices are understated. Phase 5 must handle it (revenue per active day, flagging, or imputation). |

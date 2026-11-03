@@ -81,5 +81,6 @@ The raw CSVs are not stored in this repository. To reproduce the database:
 - Each product has a single price, so revenue changes come only from quantity and product mix.
 - The simulated margin (about 59%) is far above real retail levels.
 - February 2021 is a partial month and is excluded from forecasting.
+- About 10% of days each year (a fixed spring window) have no orders, so March and April totals are understated.
 
 See `docs/data_quality_log.md` for the data profiling results.
