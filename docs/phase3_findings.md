@@ -48,7 +48,7 @@ the data has no discounts or price history. Findings describe this dataset only,
   data does not show why. Hypotheses tested and rejected or left open are in `sql/06_subqueries_ctes.sql`.
 
 ## Time patterns
-- December is the peak (seasonal index 181, from 2016 to 2019), November 119, February 134.
+- December is the peak. Monthly averages relative to the year's mean (index 181 for December, 134 for February, 119 for November) mix seasonality with within-year growth; the cleaner STL estimates in `docs/phase5_findings.md` (written in Phase 5) supersede them.
 - Saturday has 23.8% of orders, Sunday 1.7%.
 - Every year 35 to 37 consecutive days (about 18 March to 24 April) have no orders. 237 of 1,878 days have none.
   March and April totals and seasonal indices are understated; per-active-day normalisation only partly fixes this.
