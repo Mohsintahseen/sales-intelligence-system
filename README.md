@@ -2,7 +2,7 @@
 
 An end-to-end sales analytics platform that answers five business questions: what happened, why it happened, what will happen, what the business should do, and how confident the forecasts are.
 
-> **Status:** Phase 4 complete (exploratory data analysis). Under active development.
+> **Status:** Phase 5 complete (sales forecasting) Under active development.
 
 ## Planned Features
 
