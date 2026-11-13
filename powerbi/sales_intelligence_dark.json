@@ -1,0 +1,75 @@
+{
+  "name": "Sales Intelligence Dark",
+  "dataColors": ["#2DD4BF", "#8E9BFF", "#5B6B8C", "#F5B544", "#4FB3E8", "#E57AA6", "#A3E635", "#F28B54"],
+  "background": "#121B2E",
+  "foreground": "#E8EDF7",
+  "tableAccent": "#2DD4BF",
+  "good": "#2DD4BF",
+  "neutral": "#F5B544",
+  "bad": "#F0707A",
+  "maximum": "#2DD4BF",
+  "center": "#F5B544",
+  "minimum": "#8E9BFF",
+  "null": "#5B6B8C",
+  "firstLevelElements": "#E8EDF7",
+  "secondLevelElements": "#93A3BF",
+  "thirdLevelElements": "#22304D",
+  "fourthLevelElements": "#33466B",
+  "secondaryBackground": "#0B1220",
+  "textClasses": {
+    "label":   { "fontSize": 9,  "fontFace": "Segoe UI", "color": "#93A3BF" },
+    "callout": { "fontSize": 22, "fontFace": "Segoe UI Semibold", "color": "#E8EDF7" },
+    "title":   { "fontSize": 11, "fontFace": "Segoe UI Semibold", "color": "#E8EDF7" },
+    "header":  { "fontSize": 11, "fontFace": "Segoe UI Semibold", "color": "#E8EDF7" }
+  },
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#0B1220" } }, "transparency": 0 }]
+      }
+    },
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#121B2E" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#22304D" } }, "radius": 8 }],
+        "title": [{ "fontColor": { "solid": { "color": "#E8EDF7" } }, "fontSize": 11, "fontFamily": "Segoe UI Semibold", "alignment": "left" }],
+        "subTitle": [{ "fontColor": { "solid": { "color": "#93A3BF" } }, "fontSize": 9, "fontFamily": "Segoe UI" }],
+        "visualHeader": [{ "show": false }]
+      }
+    },
+    "lineChart": {
+      "*": {
+        "valueAxis": [{ "gridlineColor": { "solid": { "color": "#22304D" } }, "labelColor": { "solid": { "color": "#93A3BF" } }, "fontSize": 9, "showAxisTitle": false }],
+        "categoryAxis": [{ "labelColor": { "solid": { "color": "#93A3BF" } }, "fontSize": 9, "showAxisTitle": false }],
+        "legend": [{ "show": false }]
+      }
+    },
+    "clusteredColumnChart": {
+      "*": {
+        "valueAxis": [{ "gridlineColor": { "solid": { "color": "#22304D" } }, "labelColor": { "solid": { "color": "#93A3BF" } }, "fontSize": 9, "showAxisTitle": false }],
+        "categoryAxis": [{ "labelColor": { "solid": { "color": "#93A3BF" } }, "fontSize": 9, "showAxisTitle": false }],
+        "legend": [{ "show": true, "position": "TopRight", "labelColor": { "solid": { "color": "#93A3BF" } }, "fontSize": 9 }],
+        "labels": [{ "show": true, "color": { "solid": { "color": "#E8EDF7" } }, "fontSize": 8 }]
+      }
+    },
+    "clusteredBarChart": {
+      "*": {
+        "valueAxis": [{ "show": false, "gridlineShow": false }],
+        "categoryAxis": [{ "labelColor": { "solid": { "color": "#93A3BF" } }, "fontSize": 9, "showAxisTitle": false }],
+        "legend": [{ "show": false }],
+        "labels": [{ "show": true, "color": { "solid": { "color": "#E8EDF7" } }, "fontSize": 8 }]
+      }
+    },
+    "donutChart": {
+      "*": {
+        "legend": [{ "show": true, "position": "Right", "labelColor": { "solid": { "color": "#E8EDF7" } }, "fontSize": 9 }]
+      }
+    },
+    "slicer": {
+      "*": {
+        "header": [{ "show": true, "fontColor": { "solid": { "color": "#93A3BF" } }, "textSize": 9 }],
+        "items": [{ "fontColor": { "solid": { "color": "#E8EDF7" } }, "background": { "solid": { "color": "#121B2E" } }, "textSize": 10 }]
+      }
+    }
+  }
+}
