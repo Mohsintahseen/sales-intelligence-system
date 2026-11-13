@@ -2,7 +2,7 @@
 
 An end-to-end sales analytics platform that answers five business questions: what happened, why it happened, what will happen, what the business should do, and how confident the forecasts are.
 
-> **Status:** Phase 5 complete (sales forecasting) Under active development.
+> **Status:**Phase 6 complete (Power BI dashboard).
 
 ## Planned Features
 
@@ -84,3 +84,21 @@ The raw CSVs are not stored in this repository. To reproduce the database:
 - About 10% of days each year (a fixed spring window) have no orders, so March and April totals are understated.
 
 See `docs/data_quality_log.md` for the data profiling results.
+
+## Power BI dashboard
+
+![Executive overview dashboard](reports/figures/dashboard_overview.png)
+
+*Executive overview built in Power BI Desktop. All data is simulated.*
+
+The report is `powerbi/sales_dashboard.pbix`. It reads the star schema in the PostgreSQL `sales` schema and uses the theme in `powerbi/sales_intelligence_dark.json`.
+
+**What it shows:** revenue, profit, margin, orders, customers and average order value; monthly revenue with the 2020 break marked; revenue and profit by year; revenue by category and by store country; and customers by value tier. The Year and Country slicers filter the page, and clicking a bar cross-filters the other visuals.
+
+**Verified:** the dashboard totals reconcile to SQL (revenue $55,755,479.59, 26,326 orders, 11,887 customers), and the 2020 figures match too (4,635 orders, 3,868 customers).
+
+### How to open it
+
+1. Install Power BI Desktop (Windows only).
+2. Open `powerbi/sales_dashboard.pbix`. The data is stored inside the file (Import mode), so the report displays without a database.
+3. To refresh it, the local PostgreSQL database `sales_intelligence` must be running on `localhost:5433`, loaded with `src/load_data.py`. In Power BI choose Home > Refresh and enter your own database credentials when prompted. Credentials are not stored in this repository.
