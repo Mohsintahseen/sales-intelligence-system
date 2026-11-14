@@ -1,0 +1,8 @@
+model,pre_break_wape,pre_break_bias,break_wape,break_bias,mar_oct_2020_wape
+Seasonal naive,25.4,-25.4,131.8,126.4,229.5
+ETS,10.3,8.1,50.3,36.6,76.6
+SARIMA,19.8,18.5,57.6,51.9,83.6
+Ridge,12.1,-8.8,152.7,151.4,256.1
+Ridge+break,12.1,-8.8,86.1,84.2,132.5
+ETS+Ridge,6.5,-0.3,96.1,94.0,156.4
+ETS+SARIMA,14.3,13.3,52.9,44.3,79.8
