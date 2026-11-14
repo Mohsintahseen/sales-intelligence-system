@@ -2,7 +2,7 @@
 
 An end-to-end sales analytics platform that answers five business questions: what happened, why it happened, what will happen, what the business should do, and how confident the forecasts are.
 
-> **Status:**Phase 6 complete (Power BI dashboard).
+> **Status:**Phase 8 complete (Streamlit app; the optional LLM phase was skipped).
 
 ## Planned Features
 
@@ -104,6 +104,8 @@ The report is `powerbi/sales_dashboard.pbix`. It reads the star schema in the Po
 3. To refresh it, the local PostgreSQL database `sales_intelligence` must be running on `localhost:5433`, loaded with `src/load_data.py`. In Power BI choose Home > Refresh and enter your own database credentials when prompted. Credentials are not stored in this repository.
 
 ## Streamlit app
+
+**Live app:** https://sales-intelligence-forecasting.streamlit.app/ (free hosting: it sleeps when idle, so the first load can take a few seconds).
 
 ![Streamlit overview page](reports/figures/streamlit_overview.png)
 
