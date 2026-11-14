@@ -102,3 +102,34 @@ The report is `powerbi/sales_dashboard.pbix`. It reads the star schema in the Po
 1. Install Power BI Desktop (Windows only).
 2. Open `powerbi/sales_dashboard.pbix`. The data is stored inside the file (Import mode), so the report displays without a database.
 3. To refresh it, the local PostgreSQL database `sales_intelligence` must be running on `localhost:5433`, loaded with `src/load_data.py`. In Power BI choose Home > Refresh and enter your own database credentials when prompted. Credentials are not stored in this repository.
+
+## Streamlit app
+
+![Streamlit overview page](reports/figures/streamlit_overview.png)
+
+![Streamlit forecast page](reports/figures/streamlit_forecast.png)
+
+*Two-page interactive app. All data is simulated.*
+
+**Overview page:** six KPIs, monthly revenue with the 2020 break marked, revenue and profit by year, revenue by category and by store country, and customers by value tier. Filters for year, store country and category are in the sidebar.
+
+**Forecast page:** actual revenue plus the Feb to Jul 2021 ETS forecast, with two uncertainty bands (stable-regime and regime-risk), the Ridge+break scenario, a forecast table, the model backtest scoreboard, and the limitations.
+
+### Run it locally
+
+```powershell
+pip install streamlit pandas plotly
+streamlit run app/streamlit_app.py
+```
+
+The app opens at `http://localhost:8501`. It needs no database: it reads small snapshot files in `app/snapshots/`.
+
+### How the snapshots are made
+
+`src/export_snapshots.py` reads PostgreSQL and writes `sales_lines.csv.gz` (one row per order line) and `customer_segments.csv.gz`. Before writing, it compares the snapshot totals with an independent database query and with the figures verified earlier (revenue $55,755,479.59; 26,326 orders; 11,887 customers), and it stops if anything differs. To regenerate the files you need the local PostgreSQL database with the data loaded (`src/load_data.py`):
+
+```powershell
+python src/export_snapshots.py
+```
+
+The forecast table (`forecast_feb_jul_2021.csv`) comes from `notebooks/02_forecasting.ipynb`. The scoreboard (`model_scoreboard.csv`) holds the backtest results documented in `docs/phase5_findings.md`.
